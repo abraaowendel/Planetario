@@ -1,0 +1,303 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600&family=Spartan:wght@500&display=swap');
+/*  */
+/* PALETA DE CORES */
+:root {
+    --main-color: #070722;
+    --white-color: #FFF;
+    --gray-color: #838391;
+    --mercury-color: #DEF4FC;
+    --venus-color: #F7CC7E;
+    --earth-color:#5258FE;
+    --mars-color:#FF6C47;
+    --jupiter-color:#ECAD79;
+    --saturn-color:#FCCB69;
+    --uranus-color:#66F0D4;
+    --neptune-color:#477DFA;
+}
+/*  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Antonio', sans-serif;
+}
+html,body{
+    overflow-x: hidden;
+}
+
+/* H */
+h1{
+    font-size: 5em;
+    color: var(--white-color);
+}
+h2{}
+h3{}
+h4{}
+p, .side-rigth-text a, .side-rigth-text span{
+    font-family: "Spartan", sans-serif;
+    color: var(--gray-color);
+}
+
+/*  */
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #070722;
+    background-image: url(/src/assets/images/background-stars.svg);
+}
+/* GERAIS */
+header,footer, .root{
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 30px;
+}
+#logo{
+    color: var(--white-color);
+    font-size: 26px;
+}
+.hamburguer{
+    display: none;
+    cursor: pointer;
+}
+.line{
+    width: 35px;
+    height: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: var(--white-color);
+    transition: all 0.3s ease-in-out;
+}
+/*      */
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #37374e;
+    height: 80px;
+}
+.menu{
+    display: flex;
+    color: var(--white-color);
+}
+
+.menu li{
+    margin: 0 20px;
+    color: var(--gray-color);
+    cursor: pointer;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    transition: .3s all ease;
+    position: relative;
+}
+.menu li::before,
+.menu li::after{
+    position: absolute;
+}
+.menu li::after{
+    content: '';
+    top: -35px;
+    left: 0;
+    width: 100%;
+    border-top: 5px solid transparent;
+    transition: 0.3s all ease;
+}
+
+#mercury:hover::after,#mercury.active::after{
+    border-color: var(--mercury-color);
+}
+#venus:hover::after,#venus.active::after{
+    border-color: var(--venus-color);
+}
+#earth:hover::after,#earth.active::after{
+    border-color: var(--earth-color);
+}
+#mars:hover::after,#mars.active::after{
+    border-color: var(--mars-color);
+}
+#jupiter:hover::after,#jupiter.active::after{
+    border-color: var(--jupiter-color);
+}
+#saturn:hover::after,#saturn.active::after{
+    border-color: var(--saturn-color);
+}
+#uranus:hover::after,#uranus.active::after{
+    border-color: var(--uranus-color);
+}
+#neptune:hover::after,#neptune.active::after{
+    border-color: var(--neptune-color);
+}
+.menu li:hover, 
+.menu li.active{
+    color: var(--white-color);
+} 
+
+/*       */
+.container{
+    padding: 80px 0;
+    display: grid;
+    grid-template: "left right"
+                    "down down";
+    max-width: 1110px;
+    margin: 0 auto;
+    gap: 50px;
+}
+.side-left{
+    grid-area: left;
+    margin-right: 150px;
+}
+.side-right{
+    grid-area: right;
+    max-width: 400px;
+}
+.side-down{
+    grid-area: down;
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    gap: 30px;
+}
+
+.side-rigth-text p{
+    margin: 20px 0;
+}
+.side-rigth-text span:not(a){
+    font-weight: 600;
+}
+.side-rigth-text a{
+    margin-left: 5px;
+}
+.side-left img{
+    user-select: none;
+    width: 100%;
+}
+
+.side-down p{
+    font-size: 2.75em;
+    font-family: 'Antonio', sans-serif;
+    color: #FFF;
+    padding-top: 5px;
+}
+.side-down h4{
+    color:var(--gray-color);
+    font-family: sans-serif;
+    font-size: 0.875em;
+}
+.side-right--types{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+.side-right--types .box{
+    color: var(--white-color);
+    font-family: "Spartan", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.875em;
+    min-width: 400px;
+    margin: 8px 0;
+    box-shadow: 5px 5px 1px var(--main-color);
+}
+.side-right--types .box.active{
+    background-color: var(--mars-color);
+}
+#overview{
+    margin-top: 30px;
+}
+#overview::before{
+    content: '01';
+}
+#internal::before{
+    content: '02';
+}
+#surface::before{
+    content: '03';
+}
+#overview::before,
+#internal::before,
+#surface::before{
+    color: var(--gray-color);
+    padding-right: 25px;
+}
+
+.box{
+    border: 1px solid #37374e;
+    padding: 20px 10px 20px 25px;
+    margin: 20px 0;
+}
+/* */
+
+@media (max-width: 992px){
+    .hamburguer{
+        display: block;
+    }
+    .hamburguer.active .line:first-child{
+        transform: translateY(11px) rotate(135deg);
+    }
+    .hamburguer.active .line:nth-child(2){
+        background-color: transparent;
+        visibility: hidden;
+    }
+    .hamburguer.active .line:last-child{
+        transform: translateY(-8px) rotate(45deg);
+    }
+    .menu{
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        top: 80px;
+        left: -1000px;
+        height: 100vh;
+        width: 100%;
+        transition: .6s ease-in all;
+        background-color: var(--main-color);
+    }
+    .menu.active{
+        left: 0px;
+    }
+    .menu li{
+        margin: 0;
+        padding: 0 80px;
+        font-size: 18px;
+    }
+    .menu li::after{
+        border: 0;
+    }
+    .menu li::before{
+        content: '';
+        top: -5px;
+        left: 30px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #66F0D4;
+    }
+    #mercury::before{
+        background-color: var(--mercury-color);
+    }
+    #venus::before{
+        background-color: var(--venus-color);
+    }
+    #earth::before{
+        background-color: var(--earth-color);
+    }
+    #mars::before{
+        background-color: var(--mars-color);
+    }
+    #jupiter::before{
+        background-color: var(--jupiter-color);
+    }
+    #saturn::before{
+        background-color: var(--saturn-color);
+    }
+    #uranus::before{
+        background-color: var(--uranus-color);
+    }
+    #neptune::before{
+        background-color: var(--neptune-color);
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+    <title>Planetário</title>
+</head>
+<body>
+    <header>
+        <h5 id="logo">PLANETÁRIO</h5>
+        <nav>
+            <div class="hamburguer">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="menu">
+                <li id="mercury" class="active">MERCÚRIO</li>
+                <li id="venus">VÊNUS</li>
+                <li id="earth">TERRA</li>
+                <li id="mars">MARTE</li>
+                <li id="jupiter">JÚPITER</li>
+                <li id="saturn">SATURNO</li>
+                <li id="uranus">URANO</li>
+                <li id="neptune">NETUNO</li>
+            </ul>
+        </nav>        
+    </header>
+    <div class="root">
+        <div class="container">
+            <div class="side-left">
+                <img src="/src/assets/images/planet-mercury.svg" alt="">
+            </div>
+            <div class="side-right">
+                <div class="side-rigth-text">
+                    <h1 class="name-planet">MERCÚRIO</h1>
+                    <p class="description-planet">Mercúrio é o menor planeta do Sistema Solar e o mais próximo do Sol. Sua órbita ao redor do Sol leva 87,97 dias terrestres, o menor de todos os planetas do Sol. Mercúrio é um dos quatro planetas terrestres do Sistema Solar e é um corpo rochoso como a Terra.</p>
+                    <span>Source: <a href="" class="wiki">Wikipedia</a></span>
+                </div>
+                <div class="side-right--types">
+                    <div class="box active" id="overview" >VISÃO GERAL</div>
+                    <div class="box" id="internal">ESTRUTURA INTERNAL</div>
+                    <div class="box" id="surface">GEOLOGIA DE SUPERFÍCIE</div>
+                </div>
+            </div>
+            <div class="side-down">
+                <div class="box">
+                    <h4 class="rotation">TEMPO DE ROTAÇÃO</h4>
+                    <p class="rotation-days">58.6 DIAS</p>
+                </div>
+                <div class="box">
+                    <h4 class="revolution-time">TEMPO DE REVOLUÇÃO</h4>
+                    <p class="revolution-days">87.97 DIAS</p>
+                </div>
+                <div class="box">
+                    <h4 class="radius">RAIO</h4>
+                    <p class="radius-km">2,439.7 KM</p>
+                </div>
+                <div class="box">
+                    <h4 class="average">TEMPERATURA MÉDIA.</h4>
+                    <p class="average-temp">430°C</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/assets/js/menu.js"></script>
+    <script src="/src/assets/js/JSON.js"></script>
+</body>
+</html>
