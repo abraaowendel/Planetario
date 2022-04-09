@@ -35,7 +35,9 @@ h1{
 h2{}
 h3{}
 h4{}
-p, .side-rigth-text a, .side-rigth-text span{
+p, 
+.side-rigth-text a, 
+.side-rigth-text span{
     font-family: "Spartan", sans-serif;
     color: var(--gray-color);
 }
@@ -52,7 +54,7 @@ body{
 header,footer, .root{
     max-width: 1400px;
     margin: auto;
-    padding: 0 30px;
+    padding: 0 35px;
 }
 #logo{
     color: var(--white-color);
@@ -148,7 +150,7 @@ header{
 }
 .side-left{
     grid-area: left;
-    margin-right: 150px;
+    margin-right: 100px;
 }
 .side-right{
     grid-area: right;
@@ -172,7 +174,7 @@ header{
 }
 .side-left img{
     user-select: none;
-    width: 100%;
+    width: 400px;
 }
 
 .side-down p{
@@ -198,12 +200,18 @@ header{
     font-weight: 600;
     cursor: pointer;
     font-size: 0.875em;
-    min-width: 400px;
+    min-width: 100%;
     margin: 8px 0;
     box-shadow: 5px 5px 1px var(--main-color);
+    transition: .3s all;
+
 }
 .side-right--types .box.active{
     background-color: var(--mars-color);
+}
+.side-right--types .box:hover{
+    background-color: #37374e;
+    transition: .5s  ease-in all;
 }
 #overview{
     margin-top: 30px;
@@ -230,8 +238,53 @@ header{
     margin: 20px 0;
 }
 /* */
+@media (max-width: 1050px){
+    header{
+        flex-direction: column;
+        justify-content: space-evenly;
+        min-height: 150px;
+        padding: 20px 35px;
+    }
+    .container{
+        grid-template: "left "
+                        "right"
+                        "down";
+        place-items: center;
+        gap: 60px;
+    }
+    h1{
+        font-size: 3em;
+    }
+    .side-rigth-text p, 
+    .side-rigth-text span{
+        font-size: 13px;
+    }
+    .side-left{
+        margin-right: 0;
+    }
+    .side-left img{
+        width: 250px;
+    }
+    .side-right{
+        display: grid;
+        grid-template: auto/ repeat(2,1fr);
+        max-width: 10000px;
+        gap: 25px;
 
-@media (max-width: 992px){
+    }
+    .side-right--types .box{
+        min-width: 300px;
+        max-width: 250px;
+        font-size: 12px;
+    }
+    .menu{
+        margin-top: 20px;
+    }
+    .menu li::after{
+        border: 0;
+    }
+}
+@media (max-width: 768px){
     .hamburguer{
         display: block;
     }
@@ -264,9 +317,7 @@ header{
         padding: 0 80px;
         font-size: 18px;
     }
-    .menu li::after{
-        border: 0;
-    }
+   
     .menu li::before{
         content: '';
         top: -5px;
@@ -300,4 +351,5 @@ header{
     #neptune::before{
         background-color: var(--neptune-color);
     }
+   
 }
