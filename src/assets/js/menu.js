@@ -23,7 +23,7 @@ document.querySelectorAll('.side-right--types .box')
 .forEach((item) => item.addEventListener('click', (e) => {
     const ativos = document.querySelectorAll('.box.active')
     const remover = () => ativos.forEach((item) => item.classList.remove('active'))
-    const adicionar = () => e.currentTarget.classList.add('active')
+    const adicionar = () => e.currentTarget.classList.add('active') 
     remover();
     adicionar();
 }))

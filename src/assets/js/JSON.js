@@ -125,7 +125,6 @@ const data = [
         overView:{
             urls: "./src/assets/images/planet-saturn.svg",
             description: "Saturno é o sexto planeta a partir do Sol e o segundo maior do Sistema Solar, depois de Júpiter. É um gigante gasoso com um raio médio de cerca de nove vezes e meia o da Terra. Tem apenas um oitavo da densidade média da Terra.",
-
         },
         internalStructure:{
             urls: "./src/assets/images/planet-saturn-internal.svg",
