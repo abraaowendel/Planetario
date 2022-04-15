@@ -1,6 +1,5 @@
-
 let inicio = 0;
-
+init(inicio)
 
 document.querySelectorAll('.menu li')
 .forEach((element) => element.addEventListener('click', (e) =>{
@@ -11,9 +10,12 @@ document.querySelectorAll('.menu li')
     init(inicio);
 }))
 
+const remove = (elements) => elements.forEach(element => element.classList.remove('active')) 
+const add = (el) => el.currentTarget.classList.add('active');
 
 
 function carregarDados(item, box){
+    console.log(item, box)
     const namePlanet =  `${data[item].name}`;
     const rotationPlanet = `${data[item].generalData.rotationTime}`;
     const revolutionPlanet =  `${data[item].generalData.revolutionTime}`;
@@ -58,63 +60,49 @@ function carregarDados(item, box){
                 <p class="average-temp">${averagePlanet}</p>
             </div>
         </div>
-    </div>
-
-    `
+    </div>`
 }
-init(inicio);
-
-document.querySelectorAll('.side-right--types .box')
-.forEach((box) => box.addEventListener("click", (b) => {
-    const boxActive = document.querySelectorAll('.side-right--types .box.active')
-    remove(boxActive);
-    add(b);
-    inicio = 1;
-    init(inicio);
-}))
-
-
-
 
 function init(inicio){
     if(inicio === 0){
-        alert('REENICIO')
-        carregarDados(0,0)
+/*         alert('REENICIO')
+ */        carregarDados(0,0)
     }
     else{
         function p(){
             console.log('ENTROU NO P ')
-
             let elementActive = document.querySelector('.menu li.active')
             return elementActive.getAttribute('number');
         };
-        function ba(){
-                let isBox= document.querySelector('.side-right--types .box.active').id
-                let bo;
-                switch(isBox){
-                    case 'overview':
-                        bo = 0;
-                        break
-                    case 'internal':
-                        bo = 1;
-                        break
-                    case 'surface':
-                        bo = 2;
-                        break
-                }
-                return bo; 
-            };  
-            
-
+        function ba(){ 
+            let isBox = document.querySelector('.side-right--types .box.active').id
+            let bo;
+            switch(isBox){
+                case 'overview':
+                    bo = 0;
+                    break
+                case 'internal':
+                    bo = 1;
+                    break
+                case 'surface':
+                    bo = 2;
+                    break
+            }            
+            return bo
+        };  
         let itemMenu = p();
         let itemCaixa =  ba();
 
-        console.log(`MENU: ${itemMenu}, CAIXA: ${itemCaixa}}`)
-
-        carregarDados(itemMenu, itemCaixa);
+/*         console.log(`MENU: ${itemMenu}, CAIXA: ${itemCaixa}}`)
+ */       carregarDados(itemMenu, itemCaixa);
     }
 }
 
+document.querySelectorAll('.side-right--types .box')
+.forEach((boxes) => boxes.addEventListener("click", (b) => {
+    let boxActive = document.querySelectorAll('.side-right--types .box.active')
+    remove(boxActive)
+    add(b)
+    init(1)
+}))
 
-const remove = (elements) => elements.forEach(element => element.classList.remove('active')) 
-const add = (el) => el.currentTarget.classList.add('active');
