@@ -35,8 +35,7 @@ function init(inicio){
                 case 'surface':
                     bo = 2;
                     break
-            }
-            
+            } 
             return bo
         };  
       carregarDados(itemMenu(), itemCaixa());
@@ -66,7 +65,7 @@ function carregarDados(item, box){
             </div>
             <div class="side-right--types">
                 <div class="box" id="overview">VISÃO GERAL</div>
-                <div class="box" id="internal" >ESTRUTURA</div>
+                <div class="box" id="internal">ESTRUTURA</div>
                 <div class="box" id="surface">GEOLOGIA</div>
             </div>
         </div>
@@ -98,4 +97,3 @@ function carregarDados(item, box){
     }))
     document.querySelectorAll('.side-right--types .box')[box].classList.add('active')
 }
-
