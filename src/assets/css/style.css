@@ -41,7 +41,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: #070722;
-    background-image: url(/src/assets/images/background-stars.svg);
+    background-image: url(../images/background-stars.svg);
 }
 /* GERAIS */
 .header-container, 
