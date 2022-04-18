@@ -55,7 +55,7 @@ function carregarDados(item, box){
     document.querySelector('.root').innerHTML = `
     <div class="container">
         <div class="side-left">
-            <img src="${imagePlanet}" alt="">
+            <img src="${imagePlanet}" alt="Na imagem o planeta ${namePlanet}.">
         </div>
         <div class="side-right">
             <div class="side-rigth-text">
